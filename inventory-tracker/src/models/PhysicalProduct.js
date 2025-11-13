@@ -20,14 +20,14 @@ exports.PhysicalProduct = void 0;
 var Product_1 = require("../models/Product");
 var PhysicalProduct = /** @class */ (function (_super) {
     __extends(PhysicalProduct, _super);
-    function PhysicalProduct(sku, name, price, _weight) {
+    function PhysicalProduct(sku, name, price, orgWeight) {
         var _this = _super.call(this, sku, name, price) || this;
-        _this._weight = _weight;
+        _this.orgWeight = orgWeight;
         return _this;
     }
     Object.defineProperty(PhysicalProduct.prototype, "weight", {
         get: function () {
-            return "".concat(this._weight.toFixed(2), " kg");
+            return "".concat(this.orgWeight.toFixed(2), " kg");
         },
         enumerable: false,
         configurable: true

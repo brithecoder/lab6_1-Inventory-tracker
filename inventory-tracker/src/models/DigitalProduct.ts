@@ -2,16 +2,16 @@
 import {Product} from "../models/Product";
 
 export class DigitalProduct extends Product{
-    _fileSize: number;
+    orgfileSize: number;
 
 
-   constructor(sku: string,name: string, price: number, _fileSize: number) {
+   constructor(sku: string,name: string, price: number, orgfileSize: number) {
         super(sku,name,price);
-       this._fileSize =  _fileSize;
+       this.orgfileSize =  orgfileSize;
     }
         
         get fileSize(): string{
-            return `${this._fileSize.toFixed(2)} MB`;
+            return `${this.orgfileSize.toFixed(2)} MB`;
         }
     
         getPriceWithTax(): number {

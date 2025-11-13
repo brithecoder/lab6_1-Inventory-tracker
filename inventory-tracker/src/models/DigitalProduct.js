@@ -19,14 +19,14 @@ exports.DigitalProduct = void 0;
 var Product_1 = require("../models/Product");
 var DigitalProduct = /** @class */ (function (_super) {
     __extends(DigitalProduct, _super);
-    function DigitalProduct(sku, name, price, _fileSize) {
+    function DigitalProduct(sku, name, price, orgfileSize) {
         var _this = _super.call(this, sku, name, price) || this;
-        _this._fileSize = _fileSize;
+        _this.orgfileSize = orgfileSize;
         return _this;
     }
     Object.defineProperty(DigitalProduct.prototype, "fileSize", {
         get: function () {
-            return "".concat(this._fileSize.toFixed(2), " MB");
+            return "".concat(this.orgfileSize.toFixed(2), " MB");
         },
         enumerable: false,
         configurable: true

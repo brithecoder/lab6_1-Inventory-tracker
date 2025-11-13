@@ -5,16 +5,16 @@ import { Product } from "../models/Product";
 export class PhysicalProduct extends Product{
  
    static tax: number = 0.10;
-   _weight: number;
+   orgWeight: number;
 
-    constructor(sku: string, name: string, price: number, _weight: number){
+    constructor(sku: string, name: string, price: number, orgWeight: number){
         super(sku,name,price);
-        this._weight = _weight;
+        this.orgWeight = orgWeight;
     }
    
        
         get weight(): string {
-            return `${this._weight.toFixed(2)} kg`;
+            return `${this.orgWeight.toFixed(2)} kg`;
         }
 
         getPriceWithTax(): number {
